@@ -28,7 +28,6 @@ class TelescopeServiceProvider extends ServiceProvider
 
         $this->registerRoutes();
         $this->registerMigrations();
-        $this->registerPublishing();
 
         Telescope::start($this->app);
         Telescope::listenForStorageOpportunities($this->app);
@@ -132,6 +131,7 @@ class TelescopeServiceProvider extends ServiceProvider
         );
 
         $this->registerStorageDriver();
+        $this->registerPublishing();
     }
 
     /**
